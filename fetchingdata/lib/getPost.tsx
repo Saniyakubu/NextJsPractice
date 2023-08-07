@@ -3,9 +3,7 @@ export default async function getUserPost(userId: string) {
     `https://jsonplaceholder.typicode.com/comments?postId=${userId}`
   );
 
-  if (!res.ok) {
-    throw new Error('failed to fetch data');
-  }
+  if (!res.ok) return undefined;
 
   return res.json();
 }
